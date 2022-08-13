@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ds.smartwarehouse.pickingservice";
+option java_outer_classname = "PickingServiceImpl";
+
+package pickingService;
+
+// Interface exported by the server.
+service Picking {
+
+  rpc getOrder(stream orderList) returns (confirmOrder){}
+
+  rpc sortProduct(stream itemName) returns (stream itemStored){}
+
+}
+
+message orderList {
+  string list = 1;
+}
+
+message itemName {
+  string name = 1;
+}
+
+message confirmOrder {
+  bool order = 1;
+}
+
+message itemStored {
+  bool stored = 1;
+}

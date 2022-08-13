@@ -1,4 +1,4 @@
-package ds.inventoryservice;
+package ds.smartwarehouse.inventoryservice;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
@@ -30,30 +30,30 @@ public final class inventoryServiceGrpc {
   public static final String SERVICE_NAME = "inventoryService.inventoryService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<ds.inventoryservice.itemCode,
-      ds.inventoryservice.item> getSearchItemMethod;
+  private static volatile io.grpc.MethodDescriptor<ds.smartwarehouse.inventoryservice.itemCode,
+      ds.smartwarehouse.inventoryservice.item> getSearchItemMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "searchItem",
-      requestType = ds.inventoryservice.itemCode.class,
-      responseType = ds.inventoryservice.item.class,
+      requestType = ds.smartwarehouse.inventoryservice.itemCode.class,
+      responseType = ds.smartwarehouse.inventoryservice.item.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<ds.inventoryservice.itemCode,
-      ds.inventoryservice.item> getSearchItemMethod() {
-    io.grpc.MethodDescriptor<ds.inventoryservice.itemCode, ds.inventoryservice.item> getSearchItemMethod;
+  public static io.grpc.MethodDescriptor<ds.smartwarehouse.inventoryservice.itemCode,
+      ds.smartwarehouse.inventoryservice.item> getSearchItemMethod() {
+    io.grpc.MethodDescriptor<ds.smartwarehouse.inventoryservice.itemCode, ds.smartwarehouse.inventoryservice.item> getSearchItemMethod;
     if ((getSearchItemMethod = inventoryServiceGrpc.getSearchItemMethod) == null) {
       synchronized (inventoryServiceGrpc.class) {
         if ((getSearchItemMethod = inventoryServiceGrpc.getSearchItemMethod) == null) {
           inventoryServiceGrpc.getSearchItemMethod = getSearchItemMethod = 
-              io.grpc.MethodDescriptor.<ds.inventoryservice.itemCode, ds.inventoryservice.item>newBuilder()
+              io.grpc.MethodDescriptor.<ds.smartwarehouse.inventoryservice.itemCode, ds.smartwarehouse.inventoryservice.item>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "inventoryService.inventoryService", "searchItem"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ds.inventoryservice.itemCode.getDefaultInstance()))
+                  ds.smartwarehouse.inventoryservice.itemCode.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ds.inventoryservice.item.getDefaultInstance()))
+                  ds.smartwarehouse.inventoryservice.item.getDefaultInstance()))
                   .setSchemaDescriptor(new inventoryServiceMethodDescriptorSupplier("searchItem"))
                   .build();
           }
@@ -62,30 +62,30 @@ public final class inventoryServiceGrpc {
      return getSearchItemMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<ds.inventoryservice.itemCode,
-      ds.inventoryservice.confirmOrder> getMakeOrderMethod;
+  private static volatile io.grpc.MethodDescriptor<ds.smartwarehouse.inventoryservice.itemCode,
+      ds.smartwarehouse.inventoryservice.confirmOrder> getMakeOrderMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "makeOrder",
-      requestType = ds.inventoryservice.itemCode.class,
-      responseType = ds.inventoryservice.confirmOrder.class,
+      requestType = ds.smartwarehouse.inventoryservice.itemCode.class,
+      responseType = ds.smartwarehouse.inventoryservice.confirmOrder.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<ds.inventoryservice.itemCode,
-      ds.inventoryservice.confirmOrder> getMakeOrderMethod() {
-    io.grpc.MethodDescriptor<ds.inventoryservice.itemCode, ds.inventoryservice.confirmOrder> getMakeOrderMethod;
+  public static io.grpc.MethodDescriptor<ds.smartwarehouse.inventoryservice.itemCode,
+      ds.smartwarehouse.inventoryservice.confirmOrder> getMakeOrderMethod() {
+    io.grpc.MethodDescriptor<ds.smartwarehouse.inventoryservice.itemCode, ds.smartwarehouse.inventoryservice.confirmOrder> getMakeOrderMethod;
     if ((getMakeOrderMethod = inventoryServiceGrpc.getMakeOrderMethod) == null) {
       synchronized (inventoryServiceGrpc.class) {
         if ((getMakeOrderMethod = inventoryServiceGrpc.getMakeOrderMethod) == null) {
           inventoryServiceGrpc.getMakeOrderMethod = getMakeOrderMethod = 
-              io.grpc.MethodDescriptor.<ds.inventoryservice.itemCode, ds.inventoryservice.confirmOrder>newBuilder()
+              io.grpc.MethodDescriptor.<ds.smartwarehouse.inventoryservice.itemCode, ds.smartwarehouse.inventoryservice.confirmOrder>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "inventoryService.inventoryService", "makeOrder"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ds.inventoryservice.itemCode.getDefaultInstance()))
+                  ds.smartwarehouse.inventoryservice.itemCode.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ds.inventoryservice.confirmOrder.getDefaultInstance()))
+                  ds.smartwarehouse.inventoryservice.confirmOrder.getDefaultInstance()))
                   .setSchemaDescriptor(new inventoryServiceMethodDescriptorSupplier("makeOrder"))
                   .build();
           }
@@ -126,15 +126,15 @@ public final class inventoryServiceGrpc {
 
     /**
      */
-    public void searchItem(ds.inventoryservice.itemCode request,
-        io.grpc.stub.StreamObserver<ds.inventoryservice.item> responseObserver) {
+    public void searchItem(ds.smartwarehouse.inventoryservice.itemCode request,
+        io.grpc.stub.StreamObserver<ds.smartwarehouse.inventoryservice.item> responseObserver) {
       asyncUnimplementedUnaryCall(getSearchItemMethod(), responseObserver);
     }
 
     /**
      */
-    public void makeOrder(ds.inventoryservice.itemCode request,
-        io.grpc.stub.StreamObserver<ds.inventoryservice.confirmOrder> responseObserver) {
+    public void makeOrder(ds.smartwarehouse.inventoryservice.itemCode request,
+        io.grpc.stub.StreamObserver<ds.smartwarehouse.inventoryservice.confirmOrder> responseObserver) {
       asyncUnimplementedUnaryCall(getMakeOrderMethod(), responseObserver);
     }
 
@@ -144,15 +144,15 @@ public final class inventoryServiceGrpc {
             getSearchItemMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                ds.inventoryservice.itemCode,
-                ds.inventoryservice.item>(
+                ds.smartwarehouse.inventoryservice.itemCode,
+                ds.smartwarehouse.inventoryservice.item>(
                   this, METHODID_SEARCH_ITEM)))
           .addMethod(
             getMakeOrderMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
-                ds.inventoryservice.itemCode,
-                ds.inventoryservice.confirmOrder>(
+                ds.smartwarehouse.inventoryservice.itemCode,
+                ds.smartwarehouse.inventoryservice.confirmOrder>(
                   this, METHODID_MAKE_ORDER)))
           .build();
     }
@@ -181,16 +181,16 @@ public final class inventoryServiceGrpc {
 
     /**
      */
-    public void searchItem(ds.inventoryservice.itemCode request,
-        io.grpc.stub.StreamObserver<ds.inventoryservice.item> responseObserver) {
+    public void searchItem(ds.smartwarehouse.inventoryservice.itemCode request,
+        io.grpc.stub.StreamObserver<ds.smartwarehouse.inventoryservice.item> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSearchItemMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void makeOrder(ds.inventoryservice.itemCode request,
-        io.grpc.stub.StreamObserver<ds.inventoryservice.confirmOrder> responseObserver) {
+    public void makeOrder(ds.smartwarehouse.inventoryservice.itemCode request,
+        io.grpc.stub.StreamObserver<ds.smartwarehouse.inventoryservice.confirmOrder> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getMakeOrderMethod(), getCallOptions()), request, responseObserver);
     }
@@ -219,15 +219,15 @@ public final class inventoryServiceGrpc {
 
     /**
      */
-    public ds.inventoryservice.item searchItem(ds.inventoryservice.itemCode request) {
+    public ds.smartwarehouse.inventoryservice.item searchItem(ds.smartwarehouse.inventoryservice.itemCode request) {
       return blockingUnaryCall(
           getChannel(), getSearchItemMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public java.util.Iterator<ds.inventoryservice.confirmOrder> makeOrder(
-        ds.inventoryservice.itemCode request) {
+    public java.util.Iterator<ds.smartwarehouse.inventoryservice.confirmOrder> makeOrder(
+        ds.smartwarehouse.inventoryservice.itemCode request) {
       return blockingServerStreamingCall(
           getChannel(), getMakeOrderMethod(), getCallOptions(), request);
     }
@@ -256,8 +256,8 @@ public final class inventoryServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<ds.inventoryservice.item> searchItem(
-        ds.inventoryservice.itemCode request) {
+    public com.google.common.util.concurrent.ListenableFuture<ds.smartwarehouse.inventoryservice.item> searchItem(
+        ds.smartwarehouse.inventoryservice.itemCode request) {
       return futureUnaryCall(
           getChannel().newCall(getSearchItemMethod(), getCallOptions()), request);
     }
@@ -284,12 +284,12 @@ public final class inventoryServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SEARCH_ITEM:
-          serviceImpl.searchItem((ds.inventoryservice.itemCode) request,
-              (io.grpc.stub.StreamObserver<ds.inventoryservice.item>) responseObserver);
+          serviceImpl.searchItem((ds.smartwarehouse.inventoryservice.itemCode) request,
+              (io.grpc.stub.StreamObserver<ds.smartwarehouse.inventoryservice.item>) responseObserver);
           break;
         case METHODID_MAKE_ORDER:
-          serviceImpl.makeOrder((ds.inventoryservice.itemCode) request,
-              (io.grpc.stub.StreamObserver<ds.inventoryservice.confirmOrder>) responseObserver);
+          serviceImpl.makeOrder((ds.smartwarehouse.inventoryservice.itemCode) request,
+              (io.grpc.stub.StreamObserver<ds.smartwarehouse.inventoryservice.confirmOrder>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -313,7 +313,7 @@ public final class inventoryServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return ds.inventoryservice.InventoryServiceImpl.getDescriptor();
+      return ds.smartwarehouse.inventoryservice.InventoryServiceImpl.getDescriptor();
     }
 
     @java.lang.Override
