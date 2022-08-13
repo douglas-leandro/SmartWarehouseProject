@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ds.inventoryservice";
+option java_outer_classname = "InventoryServiceImpl";
+
+package inventoryService;
+
+// Interface exported by the server.
+service inventoryService {
+
+  rpc searchItem(itemCode) returns (item) {}
+
+  rpc makeOrder(itemCode) returns (stream confirmOrder){}
+
+}
+
+message itemCode {
+  int32 code = 1;
+}
+
+message item {
+  string name = 1;
+}
+
+message confirmOrder{
+  bool order = 1;
+}
