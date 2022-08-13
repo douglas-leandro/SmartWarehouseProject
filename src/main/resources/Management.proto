@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ds.smartwarehouse.managementService";
+option java_outer_classname = "ManagementServiceImpl";
+
+package managementService;
+
+// Interface exported by the server.
+service Management {
+
+  rpc getHours(equipCode) returns (workHours){}
+
+  rpc lowCharge(batteryLevel) returns (equipCode){}
+
+}
+
+message equipCode {
+  int32 code = 1;
+}
+
+message workHours {
+  int32 hours = 1;
+}
+
+message batteryLevel {
+  int32 battery = 1;
+}
