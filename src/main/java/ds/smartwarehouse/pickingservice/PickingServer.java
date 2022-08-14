@@ -16,6 +16,7 @@ import io.grpc.stub.StreamObserver;
 //You need to change this location for your projects. NOTICE: The class is in StringsServiceGrpc.java -> StringsServiceImplBase class (this Base class is generated from proto file option java_outer_classname)
 import ds.smartwarehouse.pickingservice.PickingGrpc.PickingImplBase;
 
+
 //Extend the ImplBase imported class here. It is an Interface file with required rpc methods
 public class PickingServer extends PickingImplBase {
 
@@ -47,8 +48,37 @@ public class PickingServer extends PickingImplBase {
 
 	@Override
 	public StreamObserver<orderList> getOrder(StreamObserver<confirmOrder> responseObserver) {
-		// TODO Auto-generated method stub
-		return super.getOrder(responseObserver);
+		// Retrieve the value from the stream of requests of the client. 
+			return new StreamObserver<orderList>() {
+				
+				
+				// For each message in the stream, get one stream at a time.
+				// NOTE: YOU MAY MODIFY THE LOGIC OF onNext, onError, onCompleted BASED ON YOUR PROJECT.
+				@Override
+				public void onNext(orderList value) {
+					// Here, in this example we compute the value of string length for each message in the stream. 
+					System.out.println("receive -> " + value.getList());
+					
+				}
+
+				@Override
+				public void onError(Throwable t) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				// Once the complete stream is received this logic will be executed.
+				@Override
+				public void onCompleted() {
+					// Preparing and sending the reply for the client. Here, response is build and with the value (length) computed by above logic.
+					 // Here, response is sent once the client is done with sending the stream.
+					  confirmOrder res = confirmOrder.newBuilder().setOrder(true).build();
+			          responseObserver.onNext(res);
+			          responseObserver.onCompleted();
+				}
+				
+				
+			};
 	}
 
 	@Override

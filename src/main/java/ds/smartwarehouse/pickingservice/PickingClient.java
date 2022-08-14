@@ -36,9 +36,7 @@ public class PickingClient {
 		blockingStub = PickingGrpc.newBlockingStub(channel);
 		asyncStub = PickingGrpc.newStub(channel);
 
-		//bidirectional streaming
-		//reverseStream();
-		
+		//client streaming
 		getOrder();
 
 		// Closing the channel once message has been passed.		
@@ -52,7 +50,7 @@ public class PickingClient {
 
 			@Override
 			public void onNext(confirmOrder value) {
-				if (confirmOrder) {
+				if (value.getOrder()) {
 					
 					System.out.println("Order received");
 				}
